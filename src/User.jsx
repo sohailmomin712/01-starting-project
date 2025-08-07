@@ -17,15 +17,15 @@ export function User() {
 }
 
 // DON'T edit the App component code
-function App() {
-  return (
-    <div id="app">
-      <h1>Time to Practice</h1>
-      <p>Welcome on board of this course! You got this 💪</p>
-      {/* <User /> */}
-    </div>
-  );
-}
+// function App() {
+//   return (
+//     <div id="app">
+//       <h1>Time to Practice</h1>
+//       <p>Welcome on board of this course! You got this 💪</p>
+//       {/* <User /> */}
+//     </div>
+//   );
+// }
 
 // export default App;
 export default User;

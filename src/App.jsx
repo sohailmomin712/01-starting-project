@@ -3,14 +3,20 @@ import { CORE_CONCEPTS } from "./data";
 import TabButton from "./components/TabButton";
 import Header from "./components/Header/Header";
 import { User } from "./User";
+import { useState } from "react";
 // import componentsImg from "./assets/components.png";
 
 function App() {
+  const [selectedTopic, setSelectedTopic] = useState("Please click a button");
   const handleSelect = (selectedButton) => {
-    //custom identifier=>selectedButton
     //selectedbutton => "components","jsx","props","state"
-    console.log(selectedButton);
+    //custom identifier=>selectedButton
+
+    // console.log(selectedButton); 
     // custom parameter
+    
+    setSelectedTopic(selectedButton);
+    // console.log(selectedTopic);
   };
   return (
     <div>
@@ -36,18 +42,17 @@ function App() {
       <section id="examples">
         <h2>Examples</h2>
         <menu>
-          {/* <TabButton label="Components"></TabButton> */}
-
+          {/* ('components') is string identifier */}
+          {/* it is used to define a funtion that should be execued upon an event but you also want to control how its going to be called and which arguments are going to be passed to it */}
           <TabButton onSelect={() => handleSelect("components")}>
             Components
           </TabButton>
-          {/* ('components') is string identifier */}
-          {/* it is used to define a funtion that should be execued upon an event but you also want to control how its going to be called and which arguments are going to be passed to it */}
           <TabButton onSelect={() => handleSelect("jsx")}>JSX</TabButton>
           <TabButton onSelect={() => handleSelect("props")}>Props</TabButton>
+          {/* <TabButton label="Components"></TabButton> */}
           <TabButton onSelect={() => handleSelect("state")}>State</TabButton>
         </menu>
-        Dynamic Content
+        {selectedTopic}
       </section>
     </div>
   );

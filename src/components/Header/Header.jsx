@@ -10,6 +10,7 @@ function Header() {
   const description = reactDescriptions[genRandomInt(2)];
   return (
     <header>
+          <h2>Time to get started!</h2>
       <img src={reactImg} alt="Stylized atom" />
       <h1>React Essentials</h1>
       <p>

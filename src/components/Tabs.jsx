@@ -1,14 +1,15 @@
 import React, { Component } from "react";
 
-const Tabs = ({ children, buttons, ButtonsContainer }) => {
+const Tabs = ({ children, buttons, ButtonsContainer = "menu" }) => {
   //   const ButtonContainer = buttonsContainer;
-  //   here we are creating a varible ButtonContainer in this case that can be used as a custom Component
   return (
     <>
       {/* buttons slot set with custom prop buttons */}
+      {/* //here we are using a varible ButtonContainer in this case that can be used as a custom Component */}
       {/* <ButtonContainer>{buttons}</ButtonContainer> */}
-      <ButtonsContainer>{buttons}</ButtonsContainer>
       {/* content slot set with childeren */}
+
+      <ButtonsContainer>{buttons}</ButtonsContainer>
       {children}
     </>
   );

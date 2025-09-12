@@ -3,8 +3,11 @@ import { useState } from "react";
 import { EXAMPLES } from "../data";
 import TabButton from "./TabButton";
 import Section from "./Section";
+import Tabs from "./Tabs";
+
 const Examples = () => {
   const [selectedTopic, setSelectedTopic] = useState("");
+  
   const handleSelect = (selectedButton) => {
     //selectedbutton => "components","jsx","props","state"
     //custom identifier=>selectedButton
@@ -31,37 +34,41 @@ const Examples = () => {
   }
   return (
     <Section title="Examples" id="examples">
-      <h2></h2>
-      <menu>
-        {/* ('components') is string identifier */}
-        {/* it is used to define a funtion that should be execued upon an event but you also want to control how its going to be called and which arguments are going to be passed to it */}
-        <TabButton
-          isSelected={selectedTopic === "components"}
-          onClick={() => handleSelect("components")}
-        >
-          Components
-        </TabButton>
-        <TabButton
-          isSelected={selectedTopic === "jsx"}
-          onClick={() => handleSelect("jsx")}
-        >
-          JSX
-        </TabButton>
-        <TabButton
-          isSelected={selectedTopic === "props"}
-          onClick={() => handleSelect("props")}
-        >
-          Props
-        </TabButton>
-        {/* <TabButton label="Components"></TabButton> */}
-        <TabButton
-          isSelected={selectedTopic === "state"}
-          onClick={() => handleSelect("state")}
-        >
-          State
-        </TabButton>
-      </menu>
-      {tabContent}
+      <Tabs
+        buttons={
+          <>
+            {/* ('components') is string identifier */}
+            {/* it is used to define a funtion that should be executed upon an event but you also want to control how its going to be called and which arguments are going to be passed to it */}
+            <TabButton
+              isSelected={selectedTopic === "components"}
+              onClick={() => handleSelect("components")}
+            >
+              Components
+            </TabButton>
+            <TabButton
+              isSelected={selectedTopic === "jsx"}
+              onClick={() => handleSelect("jsx")}
+            >
+              JSX
+            </TabButton>
+            <TabButton
+              isSelected={selectedTopic === "props"}
+              onClick={() => handleSelect("props")}
+            >
+              Props
+            </TabButton>
+            {/* <TabButton label="Components"></TabButton> */}
+            <TabButton
+              isSelected={selectedTopic === "state"}
+              onClick={() => handleSelect("state")}
+            >
+              State
+            </TabButton>
+          </>
+        }
+      >
+        {tabContent}
+      </Tabs>
     </Section>
   );
 };

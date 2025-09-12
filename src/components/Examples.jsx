@@ -7,7 +7,7 @@ import Tabs from "./Tabs";
 
 const Examples = () => {
   const [selectedTopic, setSelectedTopic] = useState("");
-  
+
   const handleSelect = (selectedButton) => {
     //selectedbutton => "components","jsx","props","state"
     //custom identifier=>selectedButton
@@ -35,6 +35,7 @@ const Examples = () => {
   return (
     <Section title="Examples" id="examples">
       <Tabs
+      ButtonsContainer="menu"
         buttons={
           <>
             {/* ('components') is string identifier */}

@@ -8,12 +8,14 @@ import React from "react";
 //   )
 // }
 
-// or by using object destructuring 
+// or by using object destructuring
 //childeren is inbuilt prop basically
-const TabButton = ({ children ,onSelect, isSelected}) => {
+const TabButton = ({ children, isSelected, ...props }) => {
   return (
     <li>
-      <button className={isSelected ? 'active' : undefined } onClick={onSelect}>{children}</button>
+      <button className={isSelected ? "active" : undefined} {...props}>
+        {children}
+      </button>
     </li>
   );
 };
